@@ -81,7 +81,10 @@ class Contato implements InputFilterAwareInterface
                     'filters' => array(
                         array('name' => 'StripTags'),  // remove xml e html da string
                         array('name' => 'StringTrim'),  // remove os espaços do início e final da string
-                        array('name' => 'StringToUpper'),  // transforma string para maiúsculo
+                        array('name' => 'StringToUpper',
+                            'options' => array(
+                                'encoding' => 'UTF-8'
+                            )),  // transforma string para maiúsculo
                          ),
                          'validators' => array(
                              array(
